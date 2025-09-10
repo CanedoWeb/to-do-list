@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            height: auto;
+            background-color: white;
+            padding: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+        }
+
+        .row {
+            background-color: rgba(0, 0, 0, 0.055);
+            border-radius: 20px;
+            width: auto;
+            display: flex;
+            justify-content: space-between  ;
+            align-items: center;
+            width: auto;
+        }
+
+        input {
+            border: none;
+            background: none;
+            padding: 10px;
+            outline: none;
+            width: 400px;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(255, 106, 0);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            outline: none;
+        }
+
+        ul li {
+            list-style-type: none;
+            padding: 20px 30px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            height: 23px;
+            width: 23px;
+            border-radius: 50%;
+            border: rgba(0, 0, 0, 0.603) 1px solid;
+            left: 0;
+        }
+
+        ul li.checked{
+            color: rgba(41, 41, 41, 0.618);
+            text-decoration: line-through;
+        }
+
+         ul li.checked::before{
+            background-color: green;
+         }
+
+         ul li span{
+            position: absolute;
+            right: 0;
+            top: 48%    ;
+            text-align: center;
+            cursor: pointer;
+         }
+
+          ul li span:hover{
+            background: rgba(0, 0, 0, 0.173);
+          }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="row"><input type="text" id="input-box" placeholder="add your task"><button class="add" onclick="addTask()">Add</button>
+        </div>
+        <div class="tasks"></div>
+        <ul id="list-container">
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+        </ul>
+    </div>
+</body>
+<script src="todo.js"></script>
+
+</html>
